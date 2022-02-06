@@ -79,6 +79,7 @@ if ! test -L "${steamuser_desktop_dir}"; then
         "${steamuser_desktop_dir%/*}"
 
     ln \
+        --no-target-directory \
         --symbolic \
         --verbose \
         "${real_user_desktop_dir}" \
