@@ -49,7 +49,7 @@ fi
 
 env \
     GST_PLUGIN_SYSTEM_PATH_1_0="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/gstreamer-1.0:${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib/gstreamer-1.0" \
-    LD_LIBRARY_PATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/:/media/brlin/Ubuntu/SteamLibrary/steamapps/common/Proton 6.3/dist/lib/:/usr/lib/pressure-vessel/overrides/lib/x86_64-linux-gnu/aliases:/usr/lib/pressure-vessel/overrides/lib/i386-linux-gnu/aliases" \
+    LD_LIBRARY_PATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/:${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib/:/usr/lib/pressure-vessel/overrides/lib/x86_64-linux-gnu/aliases:/usr/lib/pressure-vessel/overrides/lib/i386-linux-gnu/aliases" \
     MEDIACONV_AUDIO_DUMP_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/fozmediav1/audio.foz" \
     MEDIACONV_AUDIO_TRANSCODED_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/transcoded_audio.foz" \
     MEDIACONV_VIDEO_DUMP_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/fozmediav1/video.foz" \
@@ -60,7 +60,7 @@ env \
     STEAM_COMPAT_CLIENT_INSTALL_PATH="${HOME}/.local/share/Steam" \
     TERM="xterm" \
     WINEDLLOVERRIDES="steam.exe=b;dotnetfx35.exe=b;beclient.dll=b,n;beclient_x64.dll=b,n;dxvk_config=n;d3d11=n;d3d10=n;d3d10core=n;d3d10_1=n;d3d9=n;dxgi=n" \
-    WINEDLLPATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/wine:/media/brlin/Ubuntu/SteamLibrary/steamapps/common/Proton 6.3/dist/lib/wine" \
+    WINEDLLPATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/wine:${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib/wine" \
     WINEESYNC="1" \
     WINEFSYNC="1" \
     WINEPREFIX="${STEAM_LIBRARY_DIR}/steamapps/compatdata/1109570/pfx/" \
