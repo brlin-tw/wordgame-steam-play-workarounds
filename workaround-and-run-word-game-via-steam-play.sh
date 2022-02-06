@@ -71,7 +71,6 @@ ln \
 
 printf 'Info: Running game with workarounded configuration...\n'
 
-# DISABLED: Doesn't seem to effect gameplay
 cd "${word_game_installation_dir_safe}"
 
 DEF_CMD=("${word_game_main_executable_safe}")
