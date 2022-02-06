@@ -69,7 +69,8 @@ fi
 
 if ! pgrep \
     --exact \
-    steam; then
+    steam \
+    >/dev/null; then
     printf \
         'Error: Steam is not currently running.\n' \
         1>&2
