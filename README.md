@@ -1,4 +1,4 @@
-# 《文字遊戲》Steam Play 運行問題迴避工具<br>Word Game(文字遊戲) Steam Play Workarounds
+# 《文字遊戲》Steam Play 運行問題迴避工具（非官方）<br>Word Game(文字遊戲) Steam Play Workarounds (UNOFFICIAL)
 
 讓《文字遊戲》能夠順利於 Steam Play 運行  
 Let "Word Game" game title can be run properly under Steam Play

@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name:
- 文字遊戲 Steam Play 運行問題迴避工具
- Word Game(文字遊戲) Steam Play Workarounds
+ 文字遊戲 Steam Play 運行問題迴避工具（非官方）
+ Word Game(文字遊戲) Steam Play Workarounds (UNOFFICIAL)
 Upstream-Contact: 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
 Source: https://github.com/brlin-tw/wordgame-steam-play-workarounds
 
