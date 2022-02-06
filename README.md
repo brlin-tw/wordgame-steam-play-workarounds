@@ -5,6 +5,8 @@ Let "Word Game" game title can be run properly under Steam Play
 
 ![GitHub Actions 工作流程狀態標誌](https://github.com/brlin-tw/wordgame-steam-play-workarounds/actions/workflows/check-potential-problems.yml/badge.svg "查看 GitHub Actions 工作流程狀態") [![pre-commit 啟用標誌](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white "本專案使用 pre-commit 來檢查潛在問題")](https://pre-commit.com/) [![REUSE 規範遵從標誌](https://api.reuse.software/badge/github.com/brlin-tw/wordgame-steam-play-workarounds "本專案遵循 REUSE 規範以減少軟體授權支出")](https://api.reuse.software/info/github.com/brlin-tw/wordgame-steam-play-workarounds)
 
+![功能演示畫面截圖](doc-assets/demo.png "功能演示")
+
 ## 使用說明<br>Usage
 
 ### 前備條件<br>Prerequisites
