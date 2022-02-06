@@ -30,7 +30,7 @@ Let "Word Game" game title can be run properly under Steam Play
 | 環境變數名稱<br>Environment variable name | 預設值<br>Default value | 說明<br>Explanation |
 | :-: | :-: | :-- |
 | STEAM_LIBRARY_DIR | `${HOME}/.local/share/Steam` | 安裝文字遊戲的 Steam 收藏庫路徑<br>The Steam Library path that the "Word Game" title is installed |
-| GODOT_VERBOSE | `false` | 是否啟用 Godot 遊戲引擎的冗餘輸出<br>Whether to enable the Godot game engine's verbose output<br>`[true|false]` |
+| GODOT_VERBOSE | `false` | 是否啟用 Godot 遊戲引擎的冗餘輸出<br>Whether to enable the Godot game engine's verbose output<br>`[true\|false]` |
 | WINEDEBUG | `-all` | Wine 除錯相關的環境變數，參閱 Wine 的說明文件<br>Debugging-related Wine environment variable, refer Wine's documentation for more info |
 
 ## 參考資料<br>References
