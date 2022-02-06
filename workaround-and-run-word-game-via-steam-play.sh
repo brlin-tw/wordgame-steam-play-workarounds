@@ -22,7 +22,7 @@ word_game_main_executable="${word_game_installation_dir}/文字遊戲.exe"
 # For outputing MINDTYPER files to the real user's desktop
 steamuser_desktop_dir="${steamapps_compatdata_dir}/1109570/pfx/drive_c/users/steamuser/Desktop"
 
-printf 'Info: Checking runtime parameters...\n'
+printf 'Info: Checking runtime environment...\n'
 case "${STEAM_PLAY_VERSION}" in
     'Proton '*.*-*)
         # Drop the version suffix which is not included in the paths
