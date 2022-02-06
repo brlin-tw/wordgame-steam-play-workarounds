@@ -9,6 +9,7 @@
 GODOT_VERBOSE="${GODOT_VERBOSE:-false}"
 STEAM_LIBRARY_DIR="${STEAM_LIBRARY_DIR:-"${HOME}/.local/share/Steam"}"
 WINEDEBUG="${WINEDEBUG:--all}"
+STEAM_PLAY_VERSION="${STEAM_PLAY_VERSION:-"Proton Experimental"}"
 
 set \
     -o errexit \
@@ -20,6 +21,29 @@ word_game_main_executable="${word_game_installation_dir}/文字遊戲.exe"
 
 word_game_installation_dir_safe="${steamapps_common_dir}/WordGame"
 word_game_main_executable_safe="${word_game_installation_dir_safe}/WordGame.exe"
+
+printf 'Info: Checking runtime parameters...\n'
+case "${STEAM_PLAY_VERSION}" in
+    'Proton '*.*-*)
+        # Drop the version suffix which is not included in the paths
+        STEAM_PLAY_VERSION="${STEAM_PLAY_VERSION%-*}"
+        proton_dist_dir="${steamapps_common_dir}/${STEAM_PLAY_VERSION}/dist"
+    ;;
+    'Proton Experimental')
+        STEAM_PLAY_VERSION='Proton - Experimental'
+        proton_dist_dir="${steamapps_common_dir}/${STEAM_PLAY_VERSION}/files"
+    ;;
+    *)
+        printf \
+            'Error: Unsupported Steam Play version.\n' \
+            1>&2
+        exit 1
+    ;;
+esac
+steam_play_dir="${proton_dist_dir%/*}"
+printf \
+    'Info: Using Proton distribution located at "%s".\n' \
+    "${steam_play_dir}"
 
 printf 'Info: Applying unsafe path workaround...\n'
 ln \
@@ -48,24 +72,24 @@ if test "${GODOT_VERBOSE}" == true; then
 fi
 
 env \
-    GST_PLUGIN_SYSTEM_PATH_1_0="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/gstreamer-1.0:${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib/gstreamer-1.0" \
-    LD_LIBRARY_PATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/:${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib/:/usr/lib/pressure-vessel/overrides/lib/x86_64-linux-gnu/aliases:/usr/lib/pressure-vessel/overrides/lib/i386-linux-gnu/aliases" \
+    GST_PLUGIN_SYSTEM_PATH_1_0="${proton_dist_dir}/lib64/gstreamer-1.0:${proton_dist_dir}/lib/gstreamer-1.0" \
+    LD_LIBRARY_PATH="${proton_dist_dir}/lib64/:${proton_dist_dir}/lib/:/usr/lib/pressure-vessel/overrides/lib/x86_64-linux-gnu/aliases:/usr/lib/pressure-vessel/overrides/lib/i386-linux-gnu/aliases" \
     MEDIACONV_AUDIO_DUMP_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/fozmediav1/audio.foz" \
     MEDIACONV_AUDIO_TRANSCODED_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/transcoded_audio.foz" \
     MEDIACONV_VIDEO_DUMP_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/fozmediav1/video.foz" \
     MEDIACONV_VIDEO_TRANSCODED_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/transcoded_video.foz" \
-    PATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/bin/:/usr/bin:/bin" \
+    PATH="${proton_dist_dir}/bin/:/usr/bin:/bin" \
     SteamAppId="1109570" \
     SteamGameId="1109570" \
     STEAM_COMPAT_CLIENT_INSTALL_PATH="${HOME}/.local/share/Steam" \
     TERM="xterm" \
     WINEDLLOVERRIDES="steam.exe=b;dotnetfx35.exe=b;beclient.dll=b,n;beclient_x64.dll=b,n;dxvk_config=n;d3d11=n;d3d10=n;d3d10core=n;d3d10_1=n;d3d9=n;dxgi=n" \
-    WINEDLLPATH="${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib64/wine:${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/lib/wine" \
+    WINEDLLPATH="${proton_dist_dir}/lib64/wine:${proton_dist_dir}/lib/wine" \
     WINEESYNC="1" \
     WINEFSYNC="1" \
     WINEPREFIX="${STEAM_LIBRARY_DIR}/steamapps/compatdata/1109570/pfx/" \
     WINE_GST_REGISTRY_DIR="${STEAM_LIBRARY_DIR}/steamapps/compatdata/1109570/gstreamer-1.0/" \
     WINE_LARGE_ADDRESS_AWARE="1" \
-    "${STEAM_LIBRARY_DIR}/steamapps/common/Proton 6.3/dist/bin/wine64" \
+    "${proton_dist_dir}/bin/wine64" \
     steam.exe \
     "${@:-${DEF_CMD[@]}}"

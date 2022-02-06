@@ -30,6 +30,7 @@ Let "Word Game" game title can be run properly under Steam Play
 | 環境變數名稱<br>Environment variable name | 預設值<br>Default value | 說明<br>Explanation |
 | :-: | :-: | :-- |
 | STEAM_LIBRARY_DIR | `${HOME}/.local/share/Steam` | 安裝文字遊戲的 Steam 收藏庫路徑<br>The Steam Library path that the "Word Game" title is installed |
+| STEAM_PLAY_VERSION | `Proton Experimental` | 要使用的 Steam Play 相容性工具版本，應跟 收藏庫 > 文字遊戲 > 情境（右鍵）選單 > 屬性 > 相容性 中列舉的名稱一致<br>The version of the Steam Play compatibility tool to use, should be consistent with what is enumerated in LIBRARY > Word Game > Contextual(right click) menu > Properties... > COMPATIBILITY |
 | GODOT_VERBOSE | `false` | 是否啟用 Godot 遊戲引擎的冗餘輸出<br>Whether to enable the Godot game engine's verbose output<br>`[true\|false]` |
 | WINEDEBUG | `-all` | Wine 除錯相關的環境變數，參閱 Wine 的說明文件<br>Debugging-related Wine environment variable, refer Wine's documentation for more info |
 
