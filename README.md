@@ -25,6 +25,14 @@ Let "Word Game" game title can be run properly under Steam Play
      ./workaround-and-run-word-game-via-steam-play.sh
    ```
 
+   您可以透過命令列引數自訂您要讓 Wine 運行的命令（預設為遊戲主程式路徑）  
+   You can customize the command to launch by Wine via the command-line arguments(default: game executable)
+
+   ```example
+   ./workaround-and-run-word-game-via-steam-play.sh \
+     winecfg
+   ```
+
 ### 可變更腳本運行行為的環境變數<br>Environment variables that can influence script runtime behavior
 
 | 環境變數名稱<br>Environment variable name | 預設值<br>Default value | 說明<br>Explanation |
