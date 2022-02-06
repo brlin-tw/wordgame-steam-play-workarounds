@@ -44,8 +44,8 @@ Let "Word Game" game title can be run properly under Steam Play
 
 ## 授權條款<br>Licensing
 
-除[另行標註之內容](.reuse/dep5)外，本作品以 [4.0 國際版（或您偏好之更近期版本）的《Creative Commons — 姓名標示-相同方式分享》授權條款](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)釋出供大眾於授權範圍內自由使用。授權範圍外之使用[請事先提交議題洽詢](https://github.com/brlin-tw/wordgame-steam-play-workarounds/issues)  
-Unless [otherwise noted](.reuse/dep5), this product is licensed under the [4.0 international(or any of its recent versions you would prefer) version of the Creative Commons — Attribution-ShareAlike license](https://creativecommons.org/licenses/by-sa/4.0/deed).
+除[另行標註之內容](.reuse/dep5)外，本作品以 [4.0 國際版（或您偏好之更近期版本）的《Creative Commons — 姓名標示-相同方式分享》授權條款](https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW)釋出供大眾於授權範圍內自由使用。授權範圍外之使用[請事先提交議題洽詢](https://github.com/brlin-tw/wordgame-steam-play-workarounds/issues/new)  
+Unless [otherwise noted](.reuse/dep5), this product is licensed under the [4.0 international(or any of its recent versions you would prefer) version of the Creative Commons — Attribution-ShareAlike license](https://creativecommons.org/licenses/by-sa/4.0/deed).  Please [file a issue](https://github.com/brlin-tw/wordgame-steam-play-workarounds/issues/new) for usages not allowed by the current licensing.
 
 本作品遵從 [REUSE 規範](https://reuse.software/spec/)以減少軟體授權支出，相關授權細節請參閱 [REUSE - Make licensing easy for everyone](https://reuse.software/)  
 This work complies to the [REUSE Specification](https://reuse.software/spec/) to reduce software licensing costs, refer [REUSE - Make licensing easy for everyone](https://reuse.software/) for info regarding the licensing of this product.
