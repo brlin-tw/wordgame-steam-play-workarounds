@@ -1,7 +1,8 @@
 # Markdownlint(Node.js variant) configuration file
 # https://github.com/igorshubovych/markdownlint-cli#configuration
 #
-# This file is based on The Common Markdownlint(Node.js variant) Configuration Templates project
+# This file is based on The Common Markdownlint(Node.js variant)
+# Configuration Templates project
 # https://github.com/Lin-Buo-Ren/common-markdownlint-nodejs-config-templates
 #
 # Copyright 2021 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
@@ -10,7 +11,8 @@
 # Inherit Markdownlint rules
 default: True
 
-# Only allow consistent un-ordered list bullet style(allow alternations in  sub-levels)
+# Only allow consistent un-ordered list bullet style(allow alternations
+# in sub-levels)
 MD004:
   style: sublist
 
