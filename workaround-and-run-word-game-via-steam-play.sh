@@ -19,9 +19,6 @@ steamapps_common_dir="${STEAM_LIBRARY_DIR}/steamapps/common"
 word_game_installation_dir="${steamapps_common_dir}/文字遊戲"
 word_game_main_executable="${word_game_installation_dir}/文字遊戲.exe"
 
-word_game_installation_dir_safe="${steamapps_common_dir}/WordGame"
-word_game_main_executable_safe="${word_game_installation_dir_safe}/WordGame.exe"
-
 printf 'Info: Checking runtime parameters...\n'
 case "${STEAM_PLAY_VERSION}" in
     'Proton '*.*-*)
@@ -53,27 +50,10 @@ if ! test -e "${proton_dist_dir}"; then
     exit 2
 fi
 
-printf 'Info: Applying unsafe path workarounds...\n'
-ln \
-    --force \
-    --relative \
-    --symbolic \
-    --verbose \
-    "${word_game_installation_dir}" \
-    "${word_game_installation_dir_safe}"
-ln \
-    --force \
-    --relative \
-    --symbolic \
-    --verbose \
-    "${word_game_main_executable}" \
-    "${word_game_main_executable_safe}"
-
 printf 'Info: Running game with workarounded configuration...\n'
 
-cd "${word_game_installation_dir_safe}"
-
-DEF_CMD=("${word_game_main_executable_safe}")
+cd "${word_game_installation_dir}"
+DEF_CMD=("${word_game_main_executable}")
 if test "${GODOT_VERBOSE}" == true; then
     DEF_CMD+=(--verbose)
 fi
