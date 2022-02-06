@@ -72,7 +72,7 @@ ln \
 printf 'Info: Running game with workarounded configuration...\n'
 
 # DISABLED: Doesn't seem to effect gameplay
-#cd "${word_game_installation_dir_safe}"
+cd "${word_game_installation_dir_safe}"
 
 DEF_CMD=("${word_game_main_executable_safe}")
 if test "${GODOT_VERBOSE}" == true; then
@@ -99,5 +99,4 @@ env \
     WINE_GST_REGISTRY_DIR="${STEAM_LIBRARY_DIR}/steamapps/compatdata/1109570/gstreamer-1.0/" \
     WINE_LARGE_ADDRESS_AWARE="1" \
     "${proton_dist_dir}/bin/wine64" \
-    steam.exe \
     "${@:-${DEF_CMD[@]}}"
