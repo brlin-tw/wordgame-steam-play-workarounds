@@ -58,3 +58,23 @@ Unless [otherwise noted](.reuse/dep5), this product is licensed under the [4.0 i
 
 本作品遵從 [REUSE 規範](https://reuse.software/spec/)以減少軟體授權支出，相關授權細節請參閱 [REUSE - Make licensing easy for everyone](https://reuse.software/)  
 This work complies to the [REUSE Specification](https://reuse.software/spec/) to reduce software licensing costs, refer [REUSE - Make licensing easy for everyone](https://reuse.software/) for info regarding the licensing of this product.
+
+## 能夠正常運作的功能<br>Functional features
+
+以下內容包含遊戲劇透，慎入！  
+The following content contain spoilers, please be cautious!
+
+### 心智打字機輸出文件<br>Output document from the MindTyper
+
+![MindTyper screenshot](doc-assets/mindtyper-output-document.png "Output document from the MindTyper")
+
+註：Wine 容器前綴路徑屬於 Proton 的設計限制，不被視為軟體缺陷  
+NOTE: Wineprefix path is considered to be Proton's design limitation, not a bug
+
+### 結尾動畫<br>Ending sequence
+
+![結尾動畫畫面截圖](doc-assets/ending-sequence.png "結尾動畫畫面")
+
+### 銘謝動畫<br>Credit sequence
+
+![銘謝動畫畫面截圖](doc-assets/credit-sequence.png "銘謝動畫畫面")
