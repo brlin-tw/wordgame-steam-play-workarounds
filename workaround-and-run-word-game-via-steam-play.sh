@@ -53,7 +53,7 @@ if ! test -e "${proton_dist_dir}"; then
     exit 2
 fi
 
-printf 'Info: Applying unsafe path workaround...\n'
+printf 'Info: Applying unsafe path workarounds...\n'
 ln \
     --force \
     --relative \
