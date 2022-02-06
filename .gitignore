@@ -54,10 +54,11 @@
 *.xz
 *.zip
 
-# Don't track binary image files
+# Don't track binary image files, except in doc assets folder
 *.bmp
 *.jpg
 *.png
+!**/doc-assets/*
 
 # Don't track common export formats from Markdown
 *.doc?
