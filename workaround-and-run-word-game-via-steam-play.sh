@@ -45,6 +45,14 @@ printf \
     'Info: Using Proton distribution located at "%s".\n' \
     "${steam_play_dir}"
 
+if ! test -e "${proton_dist_dir}"; then
+    printf \
+        'Error: Unable to locate Proton dist/files directory at "%s".\n' \
+        "${proton_dist_dir}" \
+        1>&2
+    exit 2
+fi
+
 printf 'Info: Applying unsafe path workaround...\n'
 ln \
     --force \
