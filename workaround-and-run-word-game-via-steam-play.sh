@@ -42,7 +42,7 @@ case "${STEAM_PLAY_VERSION}" in
 esac
 steam_play_dir="${proton_dist_dir%/*}"
 printf \
-    'Info: Using Proton distribution located at "%s".\n' \
+    'Debug: Using Proton distribution located at "%s".\n' \
     "${steam_play_dir}"
 
 if ! test -e "${proton_dist_dir}"; then
