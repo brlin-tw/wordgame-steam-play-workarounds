@@ -9,8 +9,10 @@ Let "Word Game" game title can be run properly under Steam Play
 
 ### 前備條件<br>Prerequisites
 
-系統需安裝 zh_TW.UTF-8 的語言系統資料，安裝方式參閱各 Linux 作業系統散佈版的說明文件  
-zh_TW.UTF-8 locale data must be available in the system, refer each Linux distribution's documentation for details
+* 系統需安裝 zh_TW.UTF-8 的語言系統資料，安裝方式參閱各 Linux 作業系統散佈版的說明文件  
+  zh_TW.UTF-8 locale data must be available in the system, refer each Linux distribution's documentation for details
+* Steam 必須處於運作中狀態  
+  Steam must be currently running
 
 ### 使用流程<br>Usage instructions
 

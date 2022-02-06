@@ -67,6 +67,15 @@ if LC_ALL=zh_TW.UTF-8 \
     exit 3
 fi
 
+if ! pgrep \
+    --exact \
+    steam; then
+    printf \
+        'Error: Steam is not currently running.\n' \
+        1>&2
+    exit 4
+fi
+
 printf 'Info: Applying real desktop workarounds...\n'
 if ! test -e ~/.config/user-dirs.dirs; then
     real_user_desktop_dir="${HOME}/Desktop"
