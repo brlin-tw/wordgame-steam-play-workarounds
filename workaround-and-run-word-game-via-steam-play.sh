@@ -16,8 +16,11 @@ set \
     -o nounset
 
 steamapps_common_dir="${STEAM_LIBRARY_DIR}/steamapps/common"
+steamapps_compatdata_dir="${STEAM_LIBRARY_DIR}/steamapps/compatdata"
 word_game_installation_dir="${steamapps_common_dir}/文字遊戲"
 word_game_main_executable="${word_game_installation_dir}/文字遊戲.exe"
+# For outputing MINDTYPER files to the real user's desktop
+steamuser_desktop_dir="${steamapps_compatdata_dir}/1109570/pfx/drive_c/users/steamuser/Desktop"
 
 printf 'Info: Checking runtime parameters...\n'
 case "${STEAM_PLAY_VERSION}" in
@@ -48,6 +51,38 @@ if ! test -e "${proton_dist_dir}"; then
         "${proton_dist_dir}" \
         1>&2
     exit 2
+fi
+
+printf 'Info: Applying real desktop workarounds...\n'
+if ! test -e ~/.config/user-dirs.dirs; then
+    real_user_desktop_dir="${HOME}/Desktop"
+else
+    # External resource, don't care
+    # shellcheck source=/dev/null
+    source ~/.config/user-dirs.dirs
+    if ! test -v XDG_DESKTOP_DIR; then
+        real_user_desktop_dir="${HOME}/Desktop"
+    else
+        real_user_desktop_dir="${XDG_DESKTOP_DIR}"
+    fi
+fi
+
+if ! test -L "${steamuser_desktop_dir}"; then
+    rm \
+        --force \
+        --recursive \
+        --verbose \
+        "${steamuser_desktop_dir}"
+
+    mkdir \
+        --parents \
+        "${steamuser_desktop_dir%/*}"
+
+    ln \
+        --symbolic \
+        --verbose \
+        "${real_user_desktop_dir}" \
+        "${steamuser_desktop_dir}"
 fi
 
 printf 'Info: Running game with workarounded configuration...\n'
