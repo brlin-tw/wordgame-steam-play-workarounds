@@ -1,0 +1,15 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name:
+ 文字遊戲 Steam Play 運行問題迴避工具
+ Word Game(文字遊戲) Steam Play Workarounds
+Upstream-Contact: 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
+Source: https://github.com/brlin-tw/wordgame-steam-play-workarounds
+
+Files:
+ *README.md
+ */README.md
+Copyright: 2021 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com>
+# FIXME: Should be CC-BY-SA-4.0+, but reuse-tool doesn't support it, yet.
+# Bad license when operator '+' is used · Issue #275 · fsfe/reuse-tool
+# https://github.com/fsfe/reuse-tool/issues/275
+License: CC-BY-SA-4.0
