@@ -53,6 +53,20 @@ if ! test -e "${proton_dist_dir}"; then
     exit 2
 fi
 
+if LC_ALL=zh_TW.UTF-8 \
+    locale \
+    2>&1 \
+    | LC_COLLATE=C.UTF-8 \
+        grep \
+            --extended-regexp \
+            --quiet \
+            '^locale: Cannot set [a-zA-Z_]+ to default locale'; then
+    printf \
+        'Error: zh_TW.UTF-8 locale data is not available.\n' \
+        1>&2
+    exit 3
+fi
+
 printf 'Info: Applying real desktop workarounds...\n'
 if ! test -e ~/.config/user-dirs.dirs; then
     real_user_desktop_dir="${HOME}/Desktop"
@@ -96,6 +110,7 @@ fi
 
 env \
     GST_PLUGIN_SYSTEM_PATH_1_0="${proton_dist_dir}/lib64/gstreamer-1.0:${proton_dist_dir}/lib/gstreamer-1.0" \
+    LC_ALL=zh_TW.UTF-8 \
     LD_LIBRARY_PATH="${proton_dist_dir}/lib64/:${proton_dist_dir}/lib/:/usr/lib/pressure-vessel/overrides/lib/x86_64-linux-gnu/aliases:/usr/lib/pressure-vessel/overrides/lib/i386-linux-gnu/aliases" \
     MEDIACONV_AUDIO_DUMP_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/fozmediav1/audio.foz" \
     MEDIACONV_AUDIO_TRANSCODED_FILE="${STEAM_LIBRARY_DIR}/steamapps/shadercache/1109570/transcoded_audio.foz" \
